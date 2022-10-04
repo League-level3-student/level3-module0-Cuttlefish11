@@ -31,8 +31,9 @@ public class _02_2DArrayPractice {
      *          6, 7, 8
      */
     public Integer[][] test1() {
-        
-        return null;
+Integer matriX[][] = new Integer[3][3];
+
+        return matriX;
     }
     
     /*
@@ -41,8 +42,8 @@ public class _02_2DArrayPractice {
      *          "e", "f", "g", "e"
      */
     public String[][] test2() {
-        
-        return null;
+        String chars[][]= new String[3][4];
+        return chars;
     }
     
     /*
@@ -54,8 +55,8 @@ public class _02_2DArrayPractice {
      *          true, false
      */
     public Boolean[][] test3() {
-        
-        return null;
+    	 Boolean boos[][]= new Boolean[5][3];
+        return boos;
     }
     
     /*
