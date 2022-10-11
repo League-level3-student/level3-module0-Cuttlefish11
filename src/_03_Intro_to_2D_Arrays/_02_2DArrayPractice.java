@@ -1,5 +1,7 @@
 package _03_Intro_to_2D_Arrays;
 
+import javax.swing.text.StyledEditorKit.ForegroundAction;
+
 /*
  *  A 2D array is comparable to a matrix/grid ordered by rows and columns.
  *  A 2D array that holds 3, 1D arrays with each 1D array having 3 elements
@@ -42,20 +44,20 @@ Integer matriX[][] = new Integer[3][3];
      *          "e", "f", "g", "e"
      */
     public String[][] test2() {
-        String chars[][]= new String[3][4];
+        String chars[][]= new String[2][4];
         return chars;
     }
     
     /*
      * Return a 2D array that can accommodate the grid of values below:
      *          true, false,
-     *          false, false,
+     *          false, false,n m
      *          false, true,
      *          true, true,
      *          true, false
      */
     public Boolean[][] test3() {
-    	 Boolean boos[][]= new Boolean[5][3];
+    	 Boolean boos[][]= new Boolean[5][2];
         return boos;
     }
     
@@ -69,7 +71,7 @@ Integer matriX[][] = new Integer[3][3];
      * 
      * Show your teacher the grid you created
      */
-    
+	
     /*
      * Draw the grid of values for the following 2D array of Robots
      * Assume all the elements in the 2D array are initialized.
@@ -87,8 +89,8 @@ Integer matriX[][] = new Integer[3][3];
      */
     public Object test4() {
         Object[][] objects = { {null, null, null, null}, {null, null, null, new Object()} };
-        
-        return null;
+     
+        return objects[1][3];
     }
     
     /* Given the array of Objects below, return the element that is not null
@@ -98,7 +100,7 @@ Integer matriX[][] = new Integer[3][3];
     public Object test5() {
         Object[][] objects = { {null, null, new Object(), null}, {null, null, null, null} };
         
-        return null;
+        return objects[0][2];
     }
     
     /*
@@ -107,8 +109,8 @@ Integer matriX[][] = new Integer[3][3];
      */
     public Integer test6() {
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
-        
-        return null;
+       int numero = nums[0][0]  +nums[0][1]  +nums[0][2]  +nums[0][3];
+        return numero;
     }
     
     /*
@@ -117,8 +119,8 @@ Integer matriX[][] = new Integer[3][3];
      */
     public Integer test7() {
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
-        
-        return null;
+        int numero = nums[0][0]  +nums[1][0]  +nums[2][0];
+        return numero;
     }
     
     /*
@@ -126,8 +128,11 @@ Integer matriX[][] = new Integer[3][3];
      * specified row
      */
     public Integer getSumByRow(int[][] matrix, int row) {
-        
-        return null;
+    	int row2 = 0;
+        for (int i = 0; i < matrix.length; i++) {
+			row2 += matrix[row][i];
+		}
+        return row2;
     }
     
     /*
@@ -135,8 +140,11 @@ Integer matriX[][] = new Integer[3][3];
      * specified column
      */
     public Integer getSumByColumn(int[][] matrix, int col) {
-        
-        return null;
+    	int col2 = 0;
+        for (int i = 0; i < matrix.length; i++) {
+			col2 += matrix[i][col];
+		}
+        return col2;
     }
     
     /*
@@ -159,22 +167,34 @@ Integer matriX[][] = new Integer[3][3];
      *    boundaries, return null.
      */
     public Integer getEastNeighbor(int[][] matrix, int row, int col) {
-        
-        return null;
+    	if (col == 2) {
+    		   return null;
+    		        }
+    	int neighbor = matrix [row][col+1];
+        return neighbor;
     }
     
     public Integer getWestNeighbor(int[][] matrix, int row, int col) {
-        
-        return null;
+    	if(col ==0) {
+   		   return null;
+   	   }   
+    	int neighbor = matrix [row][col-1];
+           return neighbor;
     }
     
     public Integer getNorthNeighbor(int[][] matrix, int row, int col) {
-        
-        return null;
+    	 if(row ==0) {
+  		   return null;
+  	   }   
+    	int neighbor = matrix [row-1][col];
+           return neighbor;
     }
     
     public Integer getSouthNeighbor(int[][] matrix, int row, int col) {
-        
-        return null;
+    	if (row==2) {
+			return null;
+		}
+    	int neighbor = matrix [row+1][col];
+         return neighbor;
     }
 }
