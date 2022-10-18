@@ -3,8 +3,8 @@ package _04_Crazy_Digital_Painting;
 import java.awt.Color;
 
 public class CrazyDigitalPainting {
-	static final int width = 40;
-    static final int height = 40;
+	static final int width = 400;
+    static final int height =400;
 	// 1. Create two final static integers for the width and height of the display.
 
 
@@ -24,13 +24,15 @@ Color hues[][];
 hues = new Color[height][width];
 for (int i = 0; i < hues.length; i++) {
 	for (int j = 0; j < hues.length; j++) {
-		hues[i][j] = new Color(i + 45, (i * j) % 256, j * 4);
+		hues[i][j] = new Color(i % 100, (i * j) % 100, j % 256);
 	}
 }
         // 5. Come up with your own pattern to make a cool crazy image.
 
         // 6. Use the ColorArrayDisplayer class to call the displayColorsAsImage method 
         //    to show off your picture.
+ColorArrayDisplayer cad = new ColorArrayDisplayer();
+cad.displayColorsAsImage(hues);
     }
 
     public static void main(String[] args) {
